@@ -2,11 +2,34 @@ package com.young.mall.entity;
 
 import java.util.Date;
 
+/**
+ * 秒杀商品表
+ */
 public class MallGoods {
+
+	/**
+	 * 秒杀的商品表
+ 	 */
 	private Long id;
+
+	/**
+	 * 商品Id
+ 	 */
 	private Long goodsId;
+
+	/**
+	 * 秒杀价
+ 	 */
 	private Integer stockCount;
+
+	/**
+	 * 库存数量
+ 	 */
 	private Date startDate;
+
+	/**
+	 * 秒杀开始时间
+ 	 */
 	private Date endDate;
 	public Long getId() {
 		return id;

@@ -43,6 +43,7 @@ public class GoodsController extends BaseController {
     ApplicationContext applicationContext;
 	
 	/**
+	 * 商品列表
 	 * QPS:1267 load:15 mysql
 	 * 5000 * 10
 	 * QPS:2884, load:5 
@@ -97,7 +98,16 @@ public class GoodsController extends BaseController {
     	}
     	return html;
     }
-    
+
+	/**
+	 * 商品详情
+	 * @param request
+	 * @param response
+	 * @param model
+	 * @param user
+	 * @param goodsId
+	 * @return
+	 */
     @RequestMapping(value="/detail/{goodsId}")
     @ResponseBody
     public Result<GoodsDetailVo> detail(HttpServletRequest request, HttpServletResponse response, Model model, MallUser user,

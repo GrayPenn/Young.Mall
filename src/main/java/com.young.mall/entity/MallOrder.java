@@ -1,9 +1,24 @@
 package com.young.mall.entity;
 
+/**
+ * 秒杀订单表
+ */
 public class MallOrder {
+	/**
+	 *
+	 */
 	private Long id;
+	/**
+	 * 用户ID
+	 */
 	private Long userId;
+	/**
+	 * 订单ID
+	 */
 	private Long  orderId;
+	/**
+	 * 商品ID
+	 */
 	private Long goodsId;
 	public Long getId() {
 		return id;

@@ -1,5 +1,8 @@
 package com.young.mall.entity;
 
+/**
+ * 用户表
+ */
 public class User {
 	private int id;
 	private String name;
