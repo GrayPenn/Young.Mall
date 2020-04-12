@@ -47,13 +47,13 @@ public class OrderService {
         orderInfo.setStatus(0);
         orderInfo.setUserId(user.getId());
         orderDao.insert(orderInfo);
-        MallOrder miaoshaOrder = new MallOrder();
-        miaoshaOrder.setGoodsId(goods.getId());
-        miaoshaOrder.setOrderId(orderInfo.getId());
-        miaoshaOrder.setUserId(user.getId());
-        orderDao.insertMallOrder(miaoshaOrder);
+        MallOrder mallOrder = new MallOrder();
+        mallOrder.setGoodsId(goods.getId());
+        mallOrder.setOrderId(orderInfo.getId());
+        mallOrder.setUserId(user.getId());
+        orderDao.insertMallOrder(mallOrder);
 
-        redisService.set(OrderKey.getMallOrderByUidGid, "" + user.getId() + "_" + goods.getId(), miaoshaOrder);
+        redisService.set(OrderKey.getMallOrderByUidGid, "" + user.getId() + "_" + goods.getId(), mallOrder);
 
         return orderInfo;
     }

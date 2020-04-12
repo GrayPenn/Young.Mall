@@ -3,6 +3,7 @@ package com.young.mall.controller;
 import com.young.mall.access.AccessLimit;
 import com.young.mall.entity.MallOrder;
 import com.young.mall.entity.MallUser;
+import com.young.mall.entity.OrderInfo;
 import com.young.mall.redis.GoodsKey;
 import com.young.mall.redis.MallKey;
 import com.young.mall.redis.OrderKey;
@@ -136,24 +137,24 @@ public class MallController implements InitializingBean {
             return Result.error(CodeMsg.MIAO_SHA_OVER);
         }
         //预减库存
-        long stock = redisService.decr(GoodsKey.getMallGoodsStock, "" + goodsId);//10
-        if (stock < 0) {
-            localOverMap.put(goodsId, true);
-            return Result.error(CodeMsg.MIAO_SHA_OVER);
-        }
-        //判断是否已经秒杀到了
-        MallOrder order = orderService.getMallOrderByUserIdGoodsId(user.getId(), goodsId);
-        if (order != null) {
-            return Result.error(CodeMsg.REPEATE_MALL);
-        }
+//        long stock = redisService.decr(GoodsKey.getMallGoodsStock, "" + goodsId);//10
+//        if (stock < 0) {
+//            localOverMap.put(goodsId, true);
+//            return Result.error(CodeMsg.MIAO_SHA_OVER);
+//        }
+//        //判断是否已经秒杀到了
+//        MallOrder order = orderService.getMallOrderByUserIdGoodsId(user.getId(), goodsId);
+//        if (order != null) {
+//            return Result.error(CodeMsg.REPEATE_MALL);
+//        }
         //入队
 		//TODO 暂时注释
 //    	MallMessage mm = new MallMessage();
 //    	mm.setUser(user);
 //    	mm.setGoodsId(goodsId);
 //    	sender.sendMallMessage(mm);
-        return Result.success(0);//排队中
-    	/*
+        //return Result.success(0);//排队中
+
     	//判断库存
     	GoodsVo goods = goodsService.getGoodsVoByGoodsId(goodsId);//10个商品，req1 req2
     	int stock = goods.getStockCount();
@@ -163,12 +164,12 @@ public class MallController implements InitializingBean {
     	//判断是否已经秒杀到了
     	MallOrder order = orderService.getMallOrderByUserIdGoodsId(user.getId(), goodsId);
     	if(order != null) {
-    		return Result.error(CodeMsg.REPEATE_MIAOSHA);
+    		return Result.error(CodeMsg.REPEATE_MALL);
     	}
     	//减库存 下订单 写入秒杀订单
     	OrderInfo orderInfo = mallService.mall(user, goods);
-        return Result.success(orderInfo);
-        */
+        return Result.success(0);
+
     }
 
     /**
