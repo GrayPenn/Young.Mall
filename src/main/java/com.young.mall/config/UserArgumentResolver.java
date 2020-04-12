@@ -14,6 +14,7 @@ import org.springframework.web.method.support.ModelAndViewContainer;
 @Service
 public class UserArgumentResolver implements HandlerMethodArgumentResolver {
 
+	
 	@Autowired
 	MallUserService userService;
 
