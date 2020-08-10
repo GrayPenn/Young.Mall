@@ -6,6 +6,10 @@ import org.apache.commons.lang3.StringUtils;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
+/**
+ * 校验器
+ * <注解,注解修饰的类型>
+ */
 public class IsMobileValidator implements ConstraintValidator<IsMobile, String> {
 
     private boolean required = false;

@@ -33,7 +33,8 @@ public class BaseController {
 	RedisService redisService;
 	
 
-	public String render(HttpServletRequest request, HttpServletResponse response, Model model, String tplName, KeyPrefix prefix, String key) {
+	public String render(HttpServletRequest request, HttpServletResponse response, Model model, String tplName,
+						 KeyPrefix prefix, String key) {
     	if(!pageCacheEnable) {
     		return tplName;
     	}

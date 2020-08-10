@@ -14,6 +14,9 @@ import java.util.List;
 @ControllerAdvice
 @ResponseBody
 public class GlobalExceptionHandler {
+
+
+	//选择拦截所有的异常
 	@ExceptionHandler(value=Exception.class)
 	public Result<String> exceptionHandler(HttpServletRequest request, Exception e){
 		e.printStackTrace();
@@ -21,6 +24,7 @@ public class GlobalExceptionHandler {
 			GlobalException ex = (GlobalException)e;
 			return Result.error(ex.getCm());
 		}else if(e instanceof BindException) {
+			//绑定异常，如果是注解参数验证失败，走这边
 			BindException ex = (BindException)e;
 			List<ObjectError> errors = ex.getAllErrors();
 			ObjectError error = errors.get(0);
