@@ -5,6 +5,8 @@
 
 
 1、分布式 session
+
+
  登录成功-给用户生成类似 sessionId 的东西（token）用来标识用户-写入 cookie 中传入客户端-客户端在随后的访问中都会在 cookie 中带上这个token-服务端拿到 token 后根据 token 获取用户信息
 
 
