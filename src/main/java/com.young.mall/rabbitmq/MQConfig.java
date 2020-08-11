@@ -50,10 +50,10 @@ public class MQConfig {
 	public Queue queue() {
 		return new Queue(QUEUE, true);
 	}
-//	
-//	/**
-//	 * Topic模式 交换机Exchange
-//	 * */
+
+	/**
+	 * Topic模式 交换机Exchange
+	 * */
 //	@Bean
 //	public Queue topicQueue1() {
 //		return new Queue(TOPIC_QUEUE1, true);
@@ -74,9 +74,9 @@ public class MQConfig {
 //	public Binding topicBinding2() {
 //		return BindingBuilder.bind(topicQueue2()).to(topicExchage()).with("topic.#");
 //	}
-//	/**
-//	 * Fanout模式 交换机Exchange
-//	 * */
+	/**
+	 * Fanout模式 交换机Exchange
+	 * */
 //	@Bean
 //	public FanoutExchange fanoutExchage(){
 //		return new FanoutExchange(FANOUT_EXCHANGE);
@@ -89,9 +89,9 @@ public class MQConfig {
 //	public Binding FanoutBinding2() {
 //		return BindingBuilder.bind(topicQueue2()).to(fanoutExchage());
 //	}
-//	/**
-//	 * Header模式 交换机Exchange
-//	 * */
+	/**
+	 * Header模式 交换机Exchange
+	 * */
 //	@Bean
 //	public HeadersExchange headersExchage(){
 //		return new HeadersExchange(HEADERS_EXCHANGE);
