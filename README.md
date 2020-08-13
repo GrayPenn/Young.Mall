@@ -53,7 +53,7 @@
   5.3、topic 交换器
    消息放到 Exchage 中，通过绑定，再将消息放到 Queue 中
   
-  5.4、headers 交换器（其中headers交换器允许你匹配AMQP消息的header而非路由键，除此之外headers交换器和direct交换器完全一致，但性能却很差，几乎用不到，所以我们本文也不做讲解。） 
+  5.4、headers 交换器（其中headers交换器允许你匹配AMQP消息的header而非路由键，除此之外headers交换器和direct交换器完全一致，但性能却很差，几乎用不到。） 
 
 
 
@@ -72,5 +72,6 @@
   6.2、数学公式验证码
   
   6.3、接口限流防刷
+  
    6.3.1、通过拦截器，将ur i+用户 id为 key，存入 redis，在拦截器中计算用户访问次数
 
